@@ -62,7 +62,7 @@ const productos = [
         nombre: "Planta de Jade", 
         categoria: "ornamentales", 
         precio: "500.00", 
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Crassula_ovata_%28Jade_Plant%29.jpg/300px-Crassula_ovata_%28Jade_Plant%29.jpg" 
+        img: "img/plants/jade.jpg" 
     },
 
     // ----------------------------------------------------------------
