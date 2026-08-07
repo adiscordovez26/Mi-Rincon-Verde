@@ -1,21 +1,74 @@
 // ============================================================
-//  CATÁLOGO DE PRODUCTOS
-//  Configuración: Cambia TELEFONO en app.js
-//  Las imágenes apuntan a carpetas por categoría (ej: img/medicinales/menta.jpg)
-//  Si no existen, se muestra un placeholder con el nombre del producto
+//  CATÁLOGO DE PRODUCTOS - con imágenes de Wikipedia para plantas
 // ============================================================
 
 const productos = [
-    // 🌿 Medicinales
-    { id: 1, nombre: "Menta", categoria: "medicinales", precio: "3.50", img: "img/medicinales/menta.jpg" },
-    { id: 2, nombre: "Manzanilla", categoria: "medicinales", precio: "4.00", img: "img/medicinales/manzanilla.jpg" },
-    { id: 3, nombre: "Ruda", categoria: "medicinales", precio: "2.50", img: "img/medicinales/ruda.jpg" },
-    { id: 4, nombre: "Albahaca", categoria: "medicinales", precio: "3.00", img: "img/medicinales/albahaca.jpg" },
+    // 🌿 Medicinales (imágenes desde Wikimedia Commons)
+    { 
+        id: 1, 
+        nombre: "Menta", 
+        categoria: "medicinales", 
+        precio: "3.50", 
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Mentha_spicata_%28Menta_verde%29.jpg/300px-Mentha_spicata_%28Menta_verde%29.jpg" 
+    },
+    { 
+        id: 2, 
+        nombre: "Manzanilla", 
+        categoria: "medicinales", 
+        precio: "4.00", 
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Matricaria_chamomilla_%28German_chamomile%29.jpg/300px-Matricaria_chamomilla_%28German_chamomile%29.jpg" 
+    },
+    { 
+        id: 3, 
+        nombre: "Ruda", 
+        categoria: "medicinales", 
+        precio: "2.50", 
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Ruta_graveolens_%28Rue%29.jpg/300px-Ruta_graveolens_%28Rue%29.jpg" 
+    },
+    { 
+        id: 4, 
+        nombre: "Albahaca", 
+        categoria: "medicinales", 
+        precio: "3.00", 
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Ocimum_basilicum_%28Basil%29.jpg/300px-Ocimum_basilicum_%28Basil%29.jpg" 
+    },
 
-    // 🌸 Ornamentales
-    { id: 5, nombre: "Helecho", categoria: "ornamentales", precio: "7.00", img: "img/ornamentales/helecho.jpg" },
-    { id: 6, nombre: "Suculenta Echeveria", categoria: "ornamentales", precio: "5.50", img: "img/ornamentales/suculenta.jpg" },
-    { id: 7, nombre: "Cactus San Pedro", categoria: "ornamentales", precio: "6.00", img: "img/ornamentales/cactus.jpg" },
+    // 🌸 Ornamentales (imágenes desde Wikimedia Commons)
+    { 
+        id: 5, 
+        nombre: "Helecho", 
+        categoria: "ornamentales", 
+        precio: "7.00", 
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nephrolepis_exaltata_%28Boston_fern%29.jpg/300px-Nephrolepis_exaltata_%28Boston_fern%29.jpg" 
+    },
+    { 
+        id: 6, 
+        nombre: "Suculenta Echeveria", 
+        categoria: "ornamentales", 
+        precio: "5.50", 
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Echeveria_elegans_%28Mexican_snowball%29.jpg/300px-Echeveria_elegans_%28Mexican_snowball%29.jpg" 
+    },
+    { 
+        id: 7, 
+        nombre: "Cactus San Pedro", 
+        categoria: "ornamentales", 
+        precio: "6.00", 
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Echinopsis_pachanoi_%28San_Pedro_cactus%29.jpg/300px-Echinopsis_pachanoi_%28San_Pedro_cactus%29.jpg" 
+    },
+
+    // 🌱 NUEVO: Planta de Jade (ya estaba, pero con Wikipedia)
+    { 
+        id: 32, 
+        nombre: "Planta de Jade", 
+        categoria: "ornamentales", 
+        precio: "500.00", 
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Crassula_ovata_%28Jade_Plant%29.jpg/300px-Crassula_ovata_%28Jade_Plant%29.jpg" 
+    },
+
+    // ----------------------------------------------------------------
+    // Los siguientes productos NO son plantas, mantienen rutas locales
+    // o placeholders. Si deseas, puedes reemplazarlos también.
+    // ----------------------------------------------------------------
 
     // 🪴 Maceteros Plásticos
     { id: 8, nombre: "Mac. Plástico Blanco 20cm", categoria: "plasticos", precio: "4.00", img: "img/plasticos/blanco.jpg" },
@@ -61,13 +114,10 @@ const productos = [
 
     // Figuras Cerámica y Madera (30-35cm)
     { id: 30, nombre: "Figura Madera 30cm", categoria: "figuras_grandes", precio: "28.00", img: "img/figuras_grandes/madera.jpg" },
-    { id: 31, nombre: "Figura Cerámica Fría 35cm", categoria: "figuras_grandes", precio: "32.00", img: "img/figuras_grandes/ceramica.jpg" },
-
-    // 🌱 NUEVO: Planta de Jade
-    { id: 32, nombre: "Planta de Jade", categoria: "ornamentales", precio: "500.00", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Crassula_ovata_%28Jade_Plant%29.jpg/300px-Crassula_ovata_%28Jade_Plant%29.jpg" }
+    { id: 31, nombre: "Figura Cerámica Fría 35cm", categoria: "figuras_grandes", precio: "32.00", img: "img/figuras_grandes/ceramica.jpg" }
 ];
 
-// --- MAPEO DE CATEGORÍAS PARA FILTROS (con emojis y nombres amigables) ---
+// --- MAPEO DE CATEGORÍAS (sin cambios) ---
 const categoriasMap = {
     'medicinales': '🌿 Medicinales',
     'ornamentales': '🌸 Ornamentales',
@@ -83,6 +133,3 @@ const categoriasMap = {
     'piedras_lata': '🥫 Piedras Lata',
     'figuras_grandes': '🗿 Fig. 30-35cm'
 };
-
-// Exportamos para que estén disponibles globalmente (no se usa módulos por simplicidad)
-// Así app.js puede acceder a estas variables
