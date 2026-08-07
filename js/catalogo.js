@@ -64,7 +64,7 @@ const productos = [
     { id: 31, nombre: "Figura Cerámica Fría 35cm", categoria: "figuras_grandes", precio: "32.00", img: "img/figuras_grandes/ceramica.jpg" },
 
     // 🌱 NUEVO: Planta de Jade
-    { id: 32, nombre: "Planta de Jade", categoria: "ornamentales", precio: "500.00", img: "img/plants/jade.png" }
+    { id: 32, nombre: "Planta de Jade", categoria: "ornamentales", precio: "500.00", img: "img/plants/jade.jpg" }
 ];
 
 // --- MAPEO DE CATEGORÍAS PARA FILTROS (con emojis y nombres amigables) ---
