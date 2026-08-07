@@ -1,0 +1,222 @@
+/* --- RESET Y ESTILOS GLOBALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: #f4f7f2;
+    padding: 20px 15px 40px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- HEADER --- */
+.header {
+    text-align: center;
+    padding: 30px 20px 20px;
+    background: linear-gradient(135deg, #1e3c2c, #2a5a3a);
+    border-radius: 30px 30px 30px 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0, 40, 0, 0.2);
+    color: white;
+}
+
+.header h1 {
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+.header h1 span {
+    background: #f5b042;
+    padding: 0 12px;
+    border-radius: 40px;
+    color: #1e3c2c;
+    font-size: 1.8rem;
+}
+.header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-top: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 40px;
+    backdrop-filter: blur(4px);
+}
+
+/* --- FILTROS (CATEGORÍAS) --- */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filtro-btn {
+    background: white;
+    border: 2px solid #2a5a3a;
+    color: #1e3c2c;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.filtro-btn:hover {
+    background: #e8f0e5;
+    transform: scale(1.02);
+}
+
+.filtro-btn.active {
+    background: #2a5a3a;
+    color: white;
+    border-color: #2a5a3a;
+    box-shadow: 0 4px 10px rgba(42, 90, 58, 0.3);
+}
+
+/* --- GRID DE PRODUCTOS --- */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+/* --- TARJETA DE PRODUCTO --- */
+.producto-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 40, 0, 0.12);
+}
+
+.producto-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    background: #e9efe6;
+    border-bottom: 2px solid #f0f5ee;
+}
+
+.producto-info {
+    padding: 12px 14px 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-info .categoria-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #2a5a3a;
+    background: #e4eee0;
+    padding: 2px 12px;
+    border-radius: 30px;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.producto-info h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1b2c1f;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.producto-info .precio {
+    font-weight: 700;
+    color: #1e3c2c;
+    font-size: 1.1rem;
+    margin: 6px 0 12px;
+}
+.producto-info .precio::before {
+    content: "💰 ";
+    font-size: 0.9rem;
+}
+
+.btn-comprar {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    border-radius: 60px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    margin-top: auto;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    box-shadow: 0 4px 8px rgba(37, 211, 102, 0.25);
+    letter-spacing: 0.5px;
+}
+
+.btn-comprar:hover {
+    background: #1ebe5c;
+    transform: scale(1.02);
+    box-shadow: 0 6px 14px rgba(37, 211, 102, 0.35);
+}
+
+.btn-comprar:active {
+    transform: scale(0.96);
+}
+
+/* --- MENSAJE CUANDO NO HAY PRODUCTOS --- */
+.sin-resultados {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 30px;
+    color: #555;
+    font-size: 1.2rem;
+}
+
+/* --- FOOTER --- */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 15px;
+    color: #5b6e55;
+    font-size: 0.85rem;
+    border-top: 1px solid #dce6d8;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 480px) {
+    .header h1 { font-size: 1.8rem; }
+    .grid-productos { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .producto-card img { height: 120px; }
+    .producto-info { padding: 10px; }
+    .producto-info h3 { font-size: 0.85rem; }
+    .btn-comprar { font-size: 0.75rem; padding: 8px 0; }
+    .filtro-btn { font-size: 0.7rem; padding: 5px 12px; }
+}
+
+@media (min-width: 900px) {
+    .grid-productos { grid-template-columns: repeat(4, 1fr); }
+}
