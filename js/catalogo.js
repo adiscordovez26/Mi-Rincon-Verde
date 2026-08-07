@@ -9,7 +9,7 @@ const productos = [
         nombre: "Menta", 
         categoria: "medicinales", 
         precio: "3.50", 
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Mentha_spicata_%28Menta_verde%29.jpg/300px-Mentha_spicata_%28Menta_verde%29.jpg" 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFki76nCgvQo81zl0hShyQC4cGjMRqUdReh3skJHRhfw&s=10" 
     },
     { 
         id: 2, 
